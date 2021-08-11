@@ -8,6 +8,6 @@ with orders as (
 
     from dbt-tutorial.jaffle_shop.orders
 
-),
+)
 
 select * from orders
