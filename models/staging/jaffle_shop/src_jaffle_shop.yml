@@ -13,7 +13,9 @@ sources:
               tests:
                - unique
                - not_null
+
         - name: orders
+          loaded_at_field: _etl_loaded_at
           description: dati relativi agli ordini
           columns:
             - name: id
