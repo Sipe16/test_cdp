@@ -1,0 +1,25 @@
+version: 2
+
+sources: 
+    - name: jaffle_shop 
+      description: Copia della tabella sorgente presente in Bigquery
+      database: dbt-tutorial
+      tables:
+        - name: customers
+          description: dati relativi ai consumatori
+          columns:
+            - name: id
+              description: Primary Key per la tabella Customers
+              tests:
+               - unique
+               - not_null
+
+        - name: orders
+          loaded_at_field: _etl_loaded_at
+          description: dati relativi agli ordini
+          columns:
+            - name: id
+              description: Primary Key per la tabella Orders
+              tests:
+               - unique
+               - not_null

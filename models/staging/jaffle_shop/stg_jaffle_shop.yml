@@ -1,0 +1,20 @@
+version: 2
+
+models:
+    - name: stg_customers
+      description: un solo consumatore per riga
+      columns:
+      - name: customer_id
+        description: Primary Key per la tabella stg_customers
+        tests:
+            - unique
+            - not_null
+    
+    - name: stg_orders
+      columns: 
+      - name: status
+        description: '{{ doc( "nome_del_documento_da_richiamare" )}}'
+        tests:
+          - accepted_values:
+              values: ['returned','completed', 'shipped','placed','return_pending']
+                
