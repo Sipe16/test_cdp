@@ -1,0 +1,10 @@
+version: 2
+
+seeds:
+    - name: employees
+      description: tabella manuale dei dipendenti
+      columns:
+         - name: employee_id
+           tests: 
+            - unique
+            - not_null 
